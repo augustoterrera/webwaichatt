@@ -19,7 +19,7 @@ export default function N8nChatWeb() {
                 document.head.appendChild(style);
 
                 createChat({
-                    webhookUrl: 'https://pgwebhookpg.pgdevtuc.tech/webhook/079fed3d-716b-4237-a889-e06c3c8c38fe/chat',
+                    webhookUrl: 'https://rafawebhook.waichatt.com/webhook/faa8c9c6-5c38-45f1-b9ed-6156ec4b5049/chat',
                     webhookConfig: {
                         method: 'POST',
                         headers: {},
