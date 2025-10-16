@@ -77,10 +77,10 @@ export function Footer() {
         >
           <p className="text-gray-400">{t("footer.rights")}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 inline-block">
+            <a href="/politica-de-privacidad" className="text-gray-400 hover:text-white transition-colors hover:scale-110 inline-block">
               {t("footer.privacy")}
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 inline-block">
+            <a href="/terminos-y-condiciones" className="text-gray-400 hover:text-white transition-colors hover:scale-110 inline-block">
               {t("footer.terms")}
             </a>
           </div>

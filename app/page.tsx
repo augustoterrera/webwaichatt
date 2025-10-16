@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 import { HeroSection } from "@/components/HeroSection"
 import { ProblemSolutionSection } from "@/components/ProblemSolutionSection"
 import { CRMSection } from "@/components/CRMSection"
@@ -10,7 +11,6 @@ import { PricingSection } from "@/components/PricingSection"
 import { IntegrationsSection } from "@/components/IntegrationsSection"
 import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
-import { Footer } from "@/components/Footer"
 
 export default function WaichattLanding() {
   const [scrollY, setScrollY] = useState(0)
