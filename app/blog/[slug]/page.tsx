@@ -18,16 +18,16 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
         .eq("status", "published")
         .single();
 
-
     if (blog?.recommendations?.length) {
         const { data: blogs } = await supabase
             .from("waichatt_blogs")
-            .select("id, slug, title, subtitle, main_image, created_at")
+            .select("*")
             .in("id", blog.recommendations)
             .eq("status", "published");
 
         recommendations = blogs || [];
     }
+
 
     return <BlogPostPage blog={blog} recommendedBlogs={recommendations || []} />;
 }
