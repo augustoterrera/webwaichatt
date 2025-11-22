@@ -34,7 +34,7 @@ export function CTASection({ scrollY }: CTASectionProps) {
             style={{ animationDelay: "0.3s" }}
           >
             <Button
-             onClick={() => window.open("https://calendar.app.google/SCf1X8mmyjq3U6S86", "_blank")}
+             onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")}
               size="lg"
               className="bg-white text-[#268656] hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse-glow"
             >
@@ -42,7 +42,7 @@ export function CTASection({ scrollY }: CTASectionProps) {
               {t("cta.demo")}
             </Button>
             <Button
-             onClick={() => window.open("https://calendar.app.google/SCf1X8mmyjq3U6S86", "_blank")}
+             onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")}
               size="lg"
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-[#268656] bg-transparent hover:scale-110 transition-all duration-300"

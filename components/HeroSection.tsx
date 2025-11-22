@@ -150,7 +150,7 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
                   {t("hero.demo")}
                 </Button>
                 <Button
-                  onClick={() => window.open("https://calendar.app.google/2ayLKE9zywcmeJEh7", "_blank")}
+                  onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")}
                   size="lg"
                   variant="outline"
                   className="border-white/40 text-white hover:bg-white hover:text-[#268656] group bg-white/10 backdrop-blur-sm hover:scale-105 transition-all duration-300"

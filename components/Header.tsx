@@ -114,7 +114,7 @@ export function Header({ scrollY }: HeaderProps) {
 
           <div className="flex items-center space-x-4">
             <LanguageSelector isInHeroSection={isInHeroSection} />
-            <Button onClick={() => window.open("https://calendar.app.google/SCf1X8mmyjq3U6S86", "_blank")} className="hidden md:flex bg-gradient-to-r from-[#268656] to-[#1f6b4a] hover:from-[#1f6b4a] hover:to-[#268656] text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-pulse-glow">
+            <Button onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")} className="hidden md:flex bg-gradient-to-r from-[#268656] to-[#1f6b4a] hover:from-[#1f6b4a] hover:to-[#268656] text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-pulse-glow">
               <Calendar className="w-4 h-4 mr-2" />
               {t("header.demo")}
             </Button>
@@ -192,7 +192,7 @@ export function Header({ scrollY }: HeaderProps) {
               >
                 Blog
               </a>
-              <Button onClick={() => window.open("https://calendar.app.google/SCf1X8mmyjq3U6S86", "_blank")} className="w-full bg-gradient-to-r from-[#268656] to-[#1f6b4a] hover:from-[#1f6b4a] hover:to-[#268656] text-white">
+              <Button onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")} className="w-full bg-gradient-to-r from-[#268656] to-[#1f6b4a] hover:from-[#1f6b4a] hover:to-[#268656] text-white">
                 <Calendar className="w-4 h-4 mr-2" />
                 {t("header.demo")}
               </Button>
