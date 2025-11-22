@@ -95,10 +95,7 @@ export function PricingSection() {
                   {plan.name}
                 </CardTitle>
                 <div className="space-y-2">
-                  <div className="text-4xl font-bold text-gray-900 group-hover:scale-110 transition-transform">
-                    {plan.price}
-                    <span className="text-lg text-gray-600">{plan.period}</span>
-                  </div>
+
                   <p className="text-sm text-gray-600">{plan.target}</p>
                   <Badge variant="outline" className="text-[#268656] border-[#268656]/30">
                     <MessageSquare className="w-3 h-3 mr-1" />
