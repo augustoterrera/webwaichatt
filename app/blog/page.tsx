@@ -1,6 +1,7 @@
 import BlogPage from "./blog"
 import { createClient } from "@supabase/supabase-js"
 
+export const dynamic = 'force-dynamic'
 
 const supabase = createClient(process.env.DATABASE_URL ?? "", process.env.PUBLIC_ANON_KEY ?? "")
 
