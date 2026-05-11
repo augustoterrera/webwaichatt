@@ -48,7 +48,7 @@ export function LanguageSelector({ isInHeroSection = false }: LanguageSelectorPr
                 setIsOpen(false)
               }}
               className={`w-full text-left px-4 py-2 hover:bg-gray-50 transition-colors duration-200 flex items-center space-x-3 ${
-                language === lang.code ? "bg-gray-50 text-[#268656]" : "text-gray-700"
+                language === lang.code ? "bg-gray-50 text-[#259A72]" : "text-gray-700"
               }`}
             >
               <span className="text-lg">{lang.flag}</span>

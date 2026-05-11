@@ -19,7 +19,7 @@ export function ProblemSolutionSection() {
 
   return (
     <section className="py-20 bg-white/50 relative overflow-hidden select-none">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#268656]/5 to-[#1f6b4a]/5 animate-gradient-shift-slow"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#259A72]/5 to-[#1F7A5D]/5 animate-gradient-shift-slow"></div>
       <div className="container mx-auto px-4" ref={problemRef}>
         <div className={`text-center space-y-6 mb-16 ${problemInView ? "animate-fade-in-up" : "opacity-0"}`}>
           <h2 className="text-4xl font-bold text-gray-900 animate-text-reveal">{t("problem.title")}</h2>
@@ -30,16 +30,16 @@ export function ProblemSolutionSection() {
           {problemSolutions.map((item, index) => (
             <Card
               key={index}
-              className={`text-center hover:shadow-2xl transition-all duration-500 border-[#268656]/20 hover:border-[#268656]/40 group hover:scale-110 ${
+              className={`text-center hover:shadow-2xl transition-all duration-500 border-[#259A72]/20 hover:border-[#259A72]/40 group hover:scale-110 ${
                 problemInView ? "animate-scale-in" : "opacity-0"
               }`}
               style={{ animationDelay: item.delay }}
             >
               <CardContent className="pt-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#268656] to-[#1f6b4a] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-pulse-glow">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#259A72] to-[#1F7A5D] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 animate-pulse-glow">
                   <item.icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#268656] transition-colors">
+                <h3 className="font-semibold text-gray-900 mb-2 group-hover:text-[#259A72] transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600">{item.desc}</p>

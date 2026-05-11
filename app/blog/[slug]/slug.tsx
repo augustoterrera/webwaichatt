@@ -108,7 +108,7 @@ export default function BlogPostPage({
             <Header scrollY={scrollY} />
             <div className="min-h-screen bg-background">
                 {/* Hero Section with Gradient */}
-                <section className="relative bg-gradient-to-br from-[#1F6B49] via-[#268656] to-[#2D9F6F] pt-8 pb-0">
+                <section className="relative bg-gradient-to-br from-[#1F7A5D] via-[#259A72] to-[#35B88A] pt-8 pb-0">
                     <div className="max-w-6xl mx-auto px-6">
                         <div className="max-w-4xl mb-12">
                             <Badge className="mb-4 bg-white/20 text-white border-white/30 hover:bg-white/30 mt-10">
@@ -215,7 +215,7 @@ export default function BlogPostPage({
               <div className="flex items-start gap-6">
                 <Avatar className="w-20 h-20">
                   <AvatarImage src="/cyberclick-logo.jpg" />
-                  <AvatarFallback className="bg-gradient-to-br from-[#1F6B49] to-[#2D9F6F] text-white text-2xl">
+                  <AvatarFallback className="bg-gradient-to-br from-[#1F7A5D] to-[#35B88A] text-white text-2xl">
                     C
                   </AvatarFallback>
                 </Avatar>
@@ -226,21 +226,21 @@ export default function BlogPostPage({
                       <Button
                         size="icon"
                         variant="outline"
-                        className="rounded-full border-[#268656] text-[#268656] hover:bg-[#268656] hover:text-white bg-transparent"
+                        className="rounded-full border-[#259A72] text-[#259A72] hover:bg-[#259A72] hover:text-white bg-transparent"
                       >
                         <Linkedin className="w-4 h-4" />
                       </Button>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="rounded-full border-[#268656] text-[#268656] hover:bg-[#268656] hover:text-white bg-transparent"
+                        className="rounded-full border-[#259A72] text-[#259A72] hover:bg-[#259A72] hover:text-white bg-transparent"
                       >
                         <Share2 className="w-4 h-4" />
                       </Button>
                       <Button
                         size="icon"
                         variant="outline"
-                        className="rounded-full border-[#268656] text-[#268656] hover:bg-[#268656] hover:text-white bg-transparent"
+                        className="rounded-full border-[#259A72] text-[#259A72] hover:bg-[#259A72] hover:text-white bg-transparent"
                       >
                         <Share2 className="w-4 h-4" />
                       </Button>
@@ -266,7 +266,7 @@ export default function BlogPostPage({
                         <div className="max-w-6xl mx-auto">
                             <div className="mb-12">
                                 <h2 className="text-3xl md:text-4xl font-bold mb-3 text-balance">Posts que te pueden interesar</h2>
-                                <div className="w-24 h-1 bg-[#268656]" />
+                                <div className="w-24 h-1 bg-[#259A72]" />
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {recommendedBlogs.map((recBlog) => (
@@ -282,10 +282,10 @@ export default function BlogPostPage({
                                                 </div>
                                             )}
                                             <CardContent className="p-6">
-                                                <Badge variant="outline" className="mb-3 border-[#268656] text-[#268656] rounded-full text-xs">
+                                                <Badge variant="outline" className="mb-3 border-[#259A72] text-[#259A72] rounded-full text-xs">
                                                     {recBlog.category}
                                                 </Badge>
-                                                <h3 className="text-xl font-bold mb-3 group-hover:text-[#268656] transition-colors text-balance leading-snug">
+                                                <h3 className="text-xl font-bold mb-3 group-hover:text-[#259A72] transition-colors text-balance leading-snug">
                                                     {recBlog.title}
                                                 </h3>
                                                 {recBlog.subtitle && (
@@ -297,7 +297,7 @@ export default function BlogPostPage({
                                                     <Calendar className="w-4 h-4" />
                                                     <time>{new Date(recBlog.created_at).toLocaleDateString("es-ES", { dateStyle: "medium" })}</time>
                                                 </div>
-                                                <div className="flex items-center text-[#268656] font-semibold text-sm group-hover:gap-2 transition-all">
+                                                <div className="flex items-center text-[#259A72] font-semibold text-sm group-hover:gap-2 transition-all">
                                                     Leer artículo
                                                     <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                                                 </div>

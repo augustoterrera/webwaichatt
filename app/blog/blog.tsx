@@ -41,7 +41,7 @@ export default function BlogPage({ blogs }: blogPage) {
             <LanguageProvider>
                 <Header scrollY={scrollY} />
                 <div className="min-h-screen bg-background">
-                    <section className="relative bg-gradient-to-br from-[#1F6B49] via-[#268656] to-[#2D9F6F] py-24 px-6 overflow-hidden">
+                    <section className="relative bg-gradient-to-br from-[#1F7A5D] via-[#259A72] to-[#35B88A] py-24 px-6 overflow-hidden">
                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
                         <div className="max-w-4xl mx-auto text-center relative z-10">
                             <Badge className="mb-4 bg-white/20 text-white border-white/30 hover:bg-white/30">Blog</Badge>
@@ -73,7 +73,7 @@ export default function BlogPage({ blogs }: blogPage) {
                                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                                                     />
                                                 ) : (
-                                                    <div className="w-full h-full bg-gradient-to-br from-[#268656] to-[#1F6B49]" />
+                                                    <div className="w-full h-full bg-gradient-to-br from-[#259A72] to-[#1F7A5D]" />
                                                 )}
                                             </div>
                                             <CardContent className="p-6 space-y-4">
@@ -81,11 +81,11 @@ export default function BlogPage({ blogs }: blogPage) {
                                                     <Calendar className="w-4 h-4" />
                                                     <time>{new Date(blog.created_at).toLocaleDateString("es-AR")}</time>
                                                 </div>
-                                                <h2 className="text-2xl font-bold text-foreground group-hover:text-[#268656] transition-colors text-balance">
+                                                <h2 className="text-2xl font-bold text-foreground group-hover:text-[#259A72] transition-colors text-balance">
                                                     {blog.title}
                                                 </h2>
                                                 {blog.subtitle && <p className="text-muted-foreground text-pretty">{blog.subtitle}</p>}
-                                                <div className="flex items-center gap-2 text-[#268656] font-medium pt-2">
+                                                <div className="flex items-center gap-2 text-[#259A72] font-medium pt-2">
                                                     Leer más
                                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                                 </div>

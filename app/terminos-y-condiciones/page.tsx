@@ -222,7 +222,7 @@ export default function TermsAndConditions() {
                             <p>
                                 Al utilizar nuestra Plataforma, el Usuario reconoce que ha leído y acepta nuestra Política de Privacidad,
                                 disponible en{" "}
-                                <Link href="/privacidad" className="text-[#268656] hover:underline">
+                                <Link href="/privacidad" className="text-[#259A72] hover:underline">
                                     https://waichatt.com/privacidad
                                 </Link>
                                 .
@@ -318,7 +318,7 @@ export default function TermsAndConditions() {
                     </div>
 
                     <div className="mt-12 text-center">
-                        <Link href="/" className="text-[#268656] hover:text-[#1f6b4a] font-medium">
+                        <Link href="/" className="text-[#259A72] hover:text-[#1F7A5D] font-medium">
                             Volver a la página principal
                         </Link>
                     </div>

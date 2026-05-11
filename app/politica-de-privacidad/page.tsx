@@ -284,7 +284,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="mt-12 text-center">
-                        <Link href="/" className="text-[#268656] hover:text-[#1f6b4a] font-medium">
+                        <Link href="/" className="text-[#259A72] hover:text-[#1F7A5D] font-medium">
                             Volver a la página principal
                         </Link>
                     </div>

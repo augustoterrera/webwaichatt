@@ -22,14 +22,14 @@ export function CRMSection({ scrollY }: CRMSectionProps) {
           transform: `translateY(${scrollY * 0.3}px)`,
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#268656]/10 to-[#1f6b4a]/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#259A72]/10 to-[#1F7A5D]/10"></div>
       </div>
 
       <div className="container mx-auto px-4" ref={crmRef}>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 xl:gap-16 items-center">
           <div className={`space-y-6 ${crmInView ? "animate-slide-in-left" : "opacity-0"}`}>
             <div className="space-y-4">
-              <Badge className="bg-[#268656]/10 text-[#268656] hover:bg-[#268656]/20 animate-bounce-subtle">
+              <Badge className="bg-[#259A72]/10 text-[#259A72] hover:bg-[#259A72]/20 animate-bounce-subtle">
                 <BarChart3 className="w-4 h-4 mr-1" />
                 {t("crm.badge")}
               </Badge>
@@ -44,14 +44,14 @@ export function CRMSection({ scrollY }: CRMSectionProps) {
                   className={`flex items-center space-x-3 ${crmInView ? "animate-slide-in-left" : "opacity-0"}`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CheckCircle className="w-5 h-5 text-[#268656] animate-bounce-in" />
+                  <CheckCircle className="w-5 h-5 text-[#259A72] animate-bounce-in" />
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className={`relative ${crmInView ? "animate-slide-in-right" : "opacity-0"}`}>
+          <div className={`relative w-full max-w-[820px] lg:ml-auto ${crmInView ? "animate-slide-in-right" : "opacity-0"}`}>
             <div className="bg-white rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-700 animate-float relative">
               <img
                 src="/images/CRMimagen.png"
@@ -73,7 +73,7 @@ export function CRMSection({ scrollY }: CRMSectionProps) {
               </div>
 
               {/* Badge de integración en la esquina superior derecha */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#268656] to-[#1f6b4a] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse flex items-center space-x-2">
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#259A72] to-[#1F7A5D] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse flex items-center space-x-2">
                 <span>{t("crm.integrated")}</span>
                 <div className="flex space-x-1">
                   <img src="/images/logoWhatsapp.png" alt="WhatsApp" className="w-6 h-6" />

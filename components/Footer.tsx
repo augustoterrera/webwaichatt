@@ -13,12 +13,7 @@ export function Footer() {
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4 animate-fade-in-up">
-            <div className="flex items-center ">
-              <div className="">
-                <Image src="/images/waichattLogo.png" width={60} height={60} alt="Waichatt Icon" className="w-14 h-14 text-white" />
-              </div>
-              <span className="text-2xl font-bold">Waichatt</span>
-            </div>
+            <Image src="/logo_completo.svg" width={166} height={50} alt="Waichatt" className="h-12 w-auto" />
             <p className="text-gray-400">{t("footer.tagline")}</p>
           </div>
 
@@ -33,11 +28,6 @@ export function Footer() {
               <li>
                 <a href="#crm" className="hover:text-white transition-colors hover:translate-x-1 inline-block">
                   {t("nav.crm")}
-                </a>
-              </li>
-              <li>
-                <a href="#planes" className="hover:text-white transition-colors hover:translate-x-1 inline-block">
-                  {t("nav.plans")}
                 </a>
               </li>
               <li>

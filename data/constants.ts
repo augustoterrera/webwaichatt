@@ -12,6 +12,7 @@ export const integrations = [
   "/images/logos/logoTelegram.png",
   "/images/logoMeta.png",
   "/images/logoWhatsapp.png",
+  "/images/logos/logoGoogleSheets.png"
 ]
 
 export const plans = [
@@ -31,7 +32,7 @@ export const plans = [
     messages: "5,000 mensajes",
     target: "Empresas en crecimiento",
     popular: true,
-    color: "from-[#268656] to-[#1f6b4a]",
+    color: "from-[#259A72] to-[#1F7A5D]",
   },
   {
     name: "Enterprise",

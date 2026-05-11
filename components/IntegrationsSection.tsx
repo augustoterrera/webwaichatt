@@ -23,13 +23,12 @@ export function IntegrationsSection({ scrollY }: IntegrationsSectionProps) {
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
       >
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#268656]/10 to-[#1f6b4a]/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#259A72]/10 to-[#1F7A5D]/10"></div>
       </div>
 
       <div className="container mx-auto px-4" ref={integrationsRef}>
         <div className={`text-center space-y-6 mb-16 ${integrationsInView ? "animate-fade-in-up" : "opacity-0"}`}>
           <h2 className="text-4xl font-bold text-gray-900 animate-text-reveal">{t("integrations.title")}</h2>
-          <p className="text-xl text-gray-600">{t("integrations.subtitle")}</p>
         </div>
 
         <div className="overflow-hidden select-none">

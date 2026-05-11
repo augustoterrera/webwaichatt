@@ -3,6 +3,7 @@
 import { createContext, useContext, useState, type ReactNode } from "react"
 
 type Language = "en" | "es"
+type Translations = Record<Language, Record<string, string>>
 
 interface LanguageContextType {
   language: Language
@@ -25,7 +26,7 @@ interface LanguageProviderProps {
 }
 
 export function LanguageProvider({ children }: LanguageProviderProps) {
-  const [language, setLanguage] = useState<Language>("en")
+  const [language, setLanguage] = useState<Language>("es")
 
   const t = (key: string): string => {
     return translations[language][key] || key
@@ -34,7 +35,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
 }
 
-const translations = {
+const translations: Translations = {
   en: {
     // Header
     "nav.home": "Home",
@@ -156,6 +157,18 @@ const translations = {
 
     "faq.q10": "What if I want to automate different areas of my business?",
     "faq.a10": "We offer a free audit to identify repetitive tasks that waste time and can be automated. Then we develop a custom solution to optimize those processes using AI.",
+
+    "faq.q11": "Can I change my plan at any time?",
+    "faq.a11": "Yes. You can upgrade or adjust your plan whenever needed. Changes apply according to the terms agreed with your advisor.",
+
+    "faq.q12": "Are there hidden costs?",
+    "faq.a12": "No. The price is clear from the beginning. It includes a monthly AI usage limit, and any capacity expansion is always communicated beforehand.",
+
+    "faq.q13": "Do you offer a free trial?",
+    "faq.a13": "Yes. To access a trial or guided demo, you can speak with a sales advisor.",
+
+    "faq.q14": "What payment methods do you accept?",
+    "faq.a14": "We accept credit cards, debit cards, and bank transfers, with monthly or annual billing depending on the commercial agreement.",
     // CTA Section
     "cta.title": "Want to see how it would work in your business?",
   "cta.subtitle": "Schedule a personalized demo and discover the potential of conversational AI for your company",
@@ -186,143 +199,153 @@ const translations = {
     // Header
     "nav.home": "Inicio",
     "nav.faq": "Preg frecuentes",
-    "nav.crm": "CRM",
+    "nav.crm": "Plataforma",
     "nav.plans": "Planes",
     "nav.integrations": "Integraciones",
-    "header.demo": "Agendá tu demo",
+    "header.demo": "Agendá una demo",
 
     // Hero Section
-    "hero.badge": "IA Conversacional Avanzada",
-    "hero.title": "Automatizá tu negocio con",
-    "hero.title.highlight": "IA conversacional",
-    "hero.subtitle": "CRM, Agentes Inteligentes y Reportes que transforman tu WhatsApp en una máquina de ventas",
-    "hero.demo": "Contactanos",
-    "hero.audit": "Agendá tu demo Gratuita",
+    "hero.badge": "CRM inmobiliario con IA para WhatsApp",
+    "hero.title": "Gestioná tu inmobiliaria desde",
+    "hero.title.highlight": "un solo lugar",
+    "hero.subtitle": "Centralizá consultas, propiedades, visitas y seguimiento comercial con un CRM pensado para inmobiliarias.",
+    "hero.demo": "Hablar por WhatsApp",
+    "hero.audit": "Agendar demo",
     "hero.ai.active": "IA Activa 🤖",
 
     // Hero Features (new)
-    "hero.feature.sales": "CIERRA VENTAS COMPLETAS",
-    "hero.feature.sales.sub": "DESDE EL HOLA HASTA EL PAGO",
-    "hero.feature.respond": "RESPONDE COMO SI FUERAS VOS",
-    "hero.feature.respond.sub": "APRENDE DE TU CATÁLOGO",
-    "hero.feature.sell": "VENDÉ HASTA 3X MÁS",
-    "hero.feature.sell.sub": "SE OPTIMIZA SOLO",
-    "hero.feature.implement": "LO IMPLEMENTAMOS POR VOS",
-    "hero.feature.implement.sub": "SIN CONFIGURACIONES",
+    "hero.feature.sales": "CAPTÁ LEADS DE WHATSAPP",
+    "hero.feature.sales.sub": "SIN PERDER CONSULTAS",
+    "hero.feature.respond": "RESPUESTAS CON IA",
+    "hero.feature.respond.sub": "SEGÚN TU CARTERA",
+    "hero.feature.sell": "AGENDA VISITAS",
+    "hero.feature.sell.sub": "Y SEGUÍ CADA OPORTUNIDAD",
+    "hero.feature.implement": "TU CRM INMOBILIARIO",
+    "hero.feature.implement.sub": "LISTO PARA OPERAR",
 
     // Problem Solution Section
-    "problem.title": "¿Cansado de perder clientes por respuestas lentas?",
-    "problem.subtitle": "Waichatt responde por vos, 24/7, aprende de cada conversación y te ayuda a vender más",
-    "problem.attention": "Atención",
-    "problem.attention.desc": "Respuesta inmediata",
-    "problem.sales": "Venta",
-    "problem.sales.desc": "Cierre automático",
-    "problem.schedule": "Agenda",
-    "problem.schedule.desc": "Citas inteligentes",
-    "problem.collection": "Cobranza",
-    "problem.collection.desc": "Seguimiento activo",
-    "problem.reports": "Reportes",
-    "problem.reports.desc": "Insights en tiempo real",
+    "problem.title": "¿Tu inmobiliaria pierde oportunidades por falta de seguimiento?",
+    "problem.subtitle": "Waichatt organiza tus consultas, detecta interesados, sugiere propiedades y ayuda a tu equipo a vender y alquilar mejor.",
+    "problem.attention": "Consultas",
+    "problem.attention.desc": "Todo WhatsApp ordenado",
+    "problem.sales": "Leads",
+    "problem.sales.desc": "Pipeline comercial",
+    "problem.schedule": "Visitas",
+    "problem.schedule.desc": "Agenda sincronizada",
+    "problem.collection": "Propiedades",
+    "problem.collection.desc": "Cartera centralizada",
+    "problem.reports": "Métricas",
+    "problem.reports.desc": "Estado de tu operación",
 
     // CRM Section
-    "crm.badge": "CRM Inteligente",
-    "crm.title": "Gestiona todas tus conversaciones desde un solo lugar",
+    "crm.badge": "CRM para inmobiliarias",
+    "crm.title": "Convertí cada consulta en una oportunidad organizada",
     "crm.subtitle":
-    "Nuestro CRM conversacional organiza automáticamente todos tus chats, identifica leads calientes y te ayuda a no perder ninguna oportunidad de venta.",
-    "crm.feature1": "Etiquetado automático de conversaciones",
-    "crm.feature2": "Identificación de leads calientes",
-    "crm.feature3": "Historial completo de cada cliente",
-    "crm.feature4": "Reportes en tiempo real",
+    "Gestioná conversaciones, contactos, propiedades, visitas y etapas comerciales desde una plataforma diseñada para equipos inmobiliarios.",
+    "crm.feature1": "Bandeja de WhatsApp con agente IA por conversación",
+    "crm.feature2": "Pipeline de leads: nuevo, contactado, visita y negociación",
+    "crm.feature3": "Ficha completa del cliente con intereses y presupuesto",
+    "crm.feature4": "Sugerencias de propiedades y reportes en tiempo real",
     "crm.action": "Ver CRM en acción",
-    "crm.integrated": "Integrado con",
-    "crm.live": "En Vivo",
+    "crm.integrated": "Conectado con",
+    "crm.live": "Activo",
 
     // Pricing Section
-    "pricing.title": "Planes diseñados para tu crecimiento",
-    "pricing.subtitle": "Escalable, flexible y con acumulación de mensajes",
+    "pricing.title": "Planes para equipos inmobiliarios",
+    "pricing.subtitle": "Elegí el plan según el volumen de consultas, propiedades y agentes de tu inmobiliaria",
     "pricing.popular": "Más Popular",
     "pricing.starter": "Starter",
-    "pricing.starter.target": "Emprendedores y pequeños negocios",
+    "pricing.starter.target": "Inmobiliarias chicas que empiezan a ordenar sus consultas",
     "pricing.starter.messages": "1,000 mensajes",
     "pricing.pro": "Pro",
-    "pricing.pro.target": "Empresas en crecimiento",
+    "pricing.pro.target": "Equipos que gestionan múltiples propiedades y visitas",
     "pricing.pro.messages": "5,000 mensajes",
     "pricing.enterprise": "Enterprise",
-    "pricing.enterprise.target": "Grandes empresas",
+    "pricing.enterprise.target": "Inmobiliarias con alto volumen y procesos avanzados",
     "pricing.enterprise.messages": "14,000 mensajes",
     "pricing.custom": "Personalizado",
-    "pricing.custom.target": "Soluciones específicas",
+    "pricing.custom.target": "Implementaciones a medida",
     "pricing.custom.messages": "Mensajes ilimitados",
     "pricing.contact": "Contactar",
     "pricing.start": "Comenzar ahora",
-    "pricing.note": "💡 Los mensajes no utilizados se acumulan para el siguiente mes",
-    "pricing.services.title": "Otros servicios que ofrecemos",
-    "pricing.service1": "Asistentes personales con IA",
-    "pricing.service2": "Sistema contable + IA",
-    "pricing.service3": "Publicidad con Meta ADS",
-    "pricing.service4": "Ciencia de datos (Business Intelligence)",
-    "pricing.service5": "Automatización de cualquier proceso",
-    "pricing.service6": "Agente de atención al público",
-    "pricing.service7":
-    "Agentes para negocios digitales (WhatsApp, marketing, Meta Ads, métricas y alertas automatizadas)",
-    "pricing.service8": "Creación de Sitios Web",
+    "pricing.note": "Incluye implementación, configuración inicial y acompañamiento para tu equipo.",
+    "pricing.services.title": "Qué puede incluir tu plataforma",
+    "pricing.service1": "CRM de leads inmobiliarios",
+    "pricing.service2": "Bandeja de WhatsApp centralizada",
+    "pricing.service3": "Agente IA entrenado con tu cartera",
+    "pricing.service4": "Gestión de propiedades",
+    "pricing.service5": "Agenda de visitas",
+    "pricing.service6": "Web inmobiliaria con catálogo",
+    "pricing.service7": "Importación desde Tokko Broker",
+    "pricing.service8": "Reportes comerciales",
 
     // Integrations Section
-    "integrations.title": "Integraciones que potencian tu ecosistema",
-    "integrations.subtitle": "Conecta con las herramientas que ya usas",
+    "integrations.title": "Integraciones para tu operación inmobiliaria",
 
     // FAQ Section
     "faq.title": "Preguntas frecuentes",
     "faq.subtitle": "Resolvemos las dudas más comunes sobre Waichatt",
 
-    "faq.q1": "¿Qué diferencia a Waichatt de otras inteligencias artificiales?",
-    "faq.a1": "Waichatt es la única inteligencia artificial en el mercado capaz de automatizar el flujo de ventas de principio a fin, desde el primer 'hola' hasta el pago final. A diferencia de otras soluciones que solo automatizan partes del proceso y requieren que respondas manualmente a algunos mensajes, Waichatt se encarga de todo el proceso de ventas por mensaje, asegurando eficiencia y resultados.",
+    "faq.q1": "¿Waichatt es un CRM o solo un bot de WhatsApp?",
+    "faq.a1": "Es una plataforma CRM para inmobiliarias. Incluye conversaciones por WhatsApp, gestión de leads, propiedades, visitas, equipo, reportes y un agente IA configurable.",
 
-    "faq.q2": "¿Cómo se conecta Waichatt con WhatsApp Business?",
-    "faq.a2": "Waichatt se integra directamente con la API oficial de WhatsApp Business Cloud, lo que garantiza una conexión segura y estable. Todo funciona desde la nube con la máxima seguridad y disponibilidad 24/7.",
+    "faq.q2": "¿La IA puede recomendar propiedades a los clientes?",
+    "faq.a2": "Sí. El agente puede interpretar zona, presupuesto, tipo de operación y preferencias del cliente para sugerir propiedades de tu cartera.",
 
-    "faq.q3": "¿Cuánto cuesta implementar Waichatt en mi negocio?",
-    "faq.a3": "Ofrecemos planes desde $60/mes para emprendedores hasta soluciones enterprise personalizadas. Todos nuestros planes incluyen la implementación completa sin costos adicionales, soporte técnico y actualizaciones automáticas. El ROI típico se ve en las primeras 4 semanas.",
+    "faq.q3": "¿Puedo apagar la IA en una conversación?",
+    "faq.a3": "Sí. Cada chat puede tener el agente IA activado o pausado, para que tu equipo tome el control cuando lo necesite.",
 
-    "faq.q4": "¿Qué tan personalizado es mi asistente de IA?",
-    "faq.a4": "Tu asistente de IA es 100% personalizado para tu negocio. Aprende de tu catálogo de productos, tu forma de comunicarte, tus procesos de venta y se adapta a tu industria específica. Puede manejar consultas complejas, procesar pedidos, agendar citas y mucho más, todo con tu personalidad de marca.",
+    "faq.q4": "¿Sirve para ventas y alquileres?",
+    "faq.a4": "Sí. Podés gestionar propiedades en venta, alquiler o temporal, y seguir cada oportunidad desde el primer contacto hasta la negociación.",
 
-    "faq.q5": "¿Waichatt es solo para WhatsApp o maneja otras plataformas?",
-    "faq.a5": "Aunque nos especializamos en WhatsApp Business, Waichatt también se integra con Instagram, Facebook Messenger, Telegram y más de 50 plataformas adicionales. Puedes gestionar todas tus conversaciones desde un solo CRM unificado.",
+    "faq.q5": "¿Puedo agendar visitas?",
+    "faq.a5": "Sí. La plataforma incluye calendario con vistas por día, semana o mes, y puede sincronizarse con Google Calendar.",
 
-    "faq.q6": "¿La inteligencia artificial entiende audios, fotos y documentos?",
-    "faq.a6": "Sí, Waichatt puede entender audios, imágenes, documentos o cualquier tipo de archivo multimedia.",
+    "faq.q6": "¿Puedo cargar propiedades ilimitadas?",
+    "faq.a6": "Sí. Podés cargar todas las propiedades que necesites, con fotos, videos, precios, ubicación, amenities, estado de publicación y tipo de operación.",
 
-    "faq.q7": "¿La inteligencia artificial puede enviar fotos o videos?",
-    "faq.a7": "Sí, Waichatt puede enviar imágenes, videos, documentos, audios y cualquier tipo de archivo multimedia. Puede mostrar tu catálogo de productos con fotos, enviar videos explicativos, comprobantes de pago y todo lo que necesites para cerrar ventas efectivamente.",
+    "faq.q7": "¿Se puede importar desde Tokko Broker?",
+    "faq.a7": "Sí. La plataforma contempla importación y sincronización de propiedades desde Tokko Broker mediante API.",
 
-    "faq.q8": "¿Qué pasa si el cliente quiere hablar con una persona real?",
-    "faq.a8": "Waichatt está diseñado para detectar cuándo un cliente necesita atención humana y puede transferir la conversación automáticamente a tu equipo. También puedes configurar palabras clave específicas que activen esta transferencia, manteniendo siempre la satisfacción del cliente.",
+    "faq.q8": "¿Qué pasa si responde una persona desde WhatsApp Business?",
+    "faq.a8": "El bot puede pausarse automáticamente cuando interviene un humano, manteniendo una convivencia ordenada entre atención manual e IA.",
 
-    "faq.q9": "¿Cuánto tiempo toma implementar Waichatt?",
-    "faq.a9": "La implementación básica toma entre 24-48 horas. Nuestro equipo se encarga de toda la configuración, entrenamiento de la IA con tu información y pruebas. Para implementaciones enterprise más complejas, el tiempo puede extenderse a 1-2 semanas dependiendo de las integraciones requeridas.",
+    "faq.q9": "¿La plataforma sirve para equipos?",
+    "faq.a9": "Sí. Podés invitar integrantes, asignar roles y repartir conversaciones o leads entre agentes.",
 
-    "faq.q10": "¿Qué pasa si quiero automatizar diferentes áreas de mi empresa?",
-    "faq.a10": "Se hace una auditoría gratuita para evaluar cuáles son las tareas que se repiten, que hacen perder tiempo, y que la IA puede automatizar. Luego se desarrolla una solución a medida para automatizar esos procesos.",
+    "faq.q10": "¿También incluye una web para mi inmobiliaria?",
+    "faq.a10": "Sí. Incluye un sitio web propio para tu inmobiliaria, actualizado automáticamente con tu cartera de propiedades.",
+
+    "faq.q11": "¿Puedo cambiar de plan en cualquier momento?",
+    "faq.a11": "Sí. Podés actualizar o ajustar tu plan cuando lo necesites. Los cambios se aplican según las condiciones acordadas con tu asesor.",
+
+    "faq.q12": "¿Hay costos ocultos?",
+    "faq.a12": "No. El precio informado es claro desde el inicio. Incluye un límite mensual de uso de IA y, si necesitás ampliar capacidad, siempre se informa previamente.",
+
+    "faq.q13": "¿Ofrecen prueba gratuita?",
+    "faq.a13": "Sí. Para acceder a una prueba o demo guiada, podés hablar con un asesor de ventas.",
+
+    "faq.q14": "¿Qué métodos de pago aceptan?",
+    "faq.a14": "Aceptamos tarjetas de crédito, débito y transferencias bancarias, con facturación mensual o anual según el acuerdo comercial.",
     // CTA Section
-    "cta.title": "¿Querés ver cómo funcionaría en tu negocio?",
-    "cta.subtitle": "Agenda una demo personalizada y descubre el potencial de la IA conversacional para tu empresa",
+    "cta.title": "¿Querés ver cómo funcionaría en tu inmobiliaria?",
+    "cta.subtitle": "Agendá una demo y te mostramos cómo centralizar consultas, propiedades, visitas y seguimiento comercial.",
     "cta.demo": "Agendar demo",
-    "cta.audit": "Solicitar auditoría",
+    "cta.audit": "Hablar por WhatsApp",
 
     // Footer
-    "footer.tagline": "Automatización inteligente para el futuro de tu negocio",
+    "footer.tagline": "CRM inmobiliario con WhatsApp e inteligencia artificial",
     "footer.navigation": "Navegación",
-    "footer.services": "Servicios",
+    "footer.services": "Plataforma",
     "footer.contact": "Contacto",
-    "footer.service1": "Asistentes personales con IA",
-    "footer.service2": "Sistema contable + IA",
-    "footer.service3": "Publicidad con Meta Ads",
-    "footer.service4": "Ciencia de datos",
-    "footer.support": "Soporte 24/7",
+    "footer.service1": "CRM inmobiliario",
+    "footer.service2": "Agente IA para WhatsApp",
+    "footer.service3": "Gestión de propiedades",
+    "footer.service4": "Agenda y reportes",
+    "footer.support": "Soporte para tu equipo",
     "footer.demo": "Demo personalizada",
     "footer.rights": `© ${new Date().getFullYear()
-  } Waichatt.Todos los derechos reservados.`,
+  } Waichatt. Todos los derechos reservados.`,
     "footer.privacy": "Políticas de privacidad",
     "footer.terms": "Términos",
 

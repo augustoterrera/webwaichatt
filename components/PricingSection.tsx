@@ -28,7 +28,7 @@ export function PricingSection() {
       messages: t("pricing.pro.messages"),
       target: t("pricing.pro.target"),
       popular: true,
-      color: "from-[#268656] to-[#1f6b4a]",
+      color: "from-[#259A72] to-[#1F7A5D]",
     },
     {
       name: t("pricing.enterprise"),
@@ -63,7 +63,7 @@ export function PricingSection() {
 
   return (
     <section id="planes" className="py-20 bg-white/50 relative overflow-hidden select-none">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#268656]/5 to-[#1f6b4a]/5 animate-gradient-shift"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#259A72]/5 to-[#1F7A5D]/5 animate-gradient-shift"></div>
       <div className="container mx-auto px-4" ref={plansRef}>
         <div className={`text-center space-y-6 mb-16 ${plansInView ? "animate-fade-in-up" : "opacity-0"}`}>
           <h2 className="text-4xl font-bold text-gray-900 animate-text-reveal">{t("pricing.title")}</h2>
@@ -76,14 +76,14 @@ export function PricingSection() {
               key={index}
               className={`relative hover:shadow-2xl transition-all duration-500 group hover:scale-110 ${
                 plan.popular
-                  ? "border-[#268656]/40 shadow-xl scale-105 animate-pulse-border"
-                  : "border-[#268656]/20 hover:border-[#268656]/40"
+                  ? "border-[#259A72]/40 shadow-xl scale-105 animate-pulse-border"
+                  : "border-[#259A72]/20 hover:border-[#259A72]/40"
               } ${plansInView ? "animate-scale-in" : "opacity-0"}`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-                  <Badge className="bg-gradient-to-r from-[#268656] to-[#1f6b4a] text-white px-4 py-1">
+                  <Badge className="bg-gradient-to-r from-[#259A72] to-[#1F7A5D] text-white px-4 py-1">
                     <Star className="w-4 h-4 mr-1" />
                     {t("pricing.popular")}
                   </Badge>
@@ -91,13 +91,13 @@ export function PricingSection() {
               )}
 
               <CardHeader className="text-center relative">
-                <CardTitle className="text-2xl text-gray-900 group-hover:text-[#268656] transition-colors">
+                <CardTitle className="text-2xl text-gray-900 group-hover:text-[#259A72] transition-colors">
                   {plan.name}
                 </CardTitle>
                 <div className="space-y-2">
 
                   <p className="text-sm text-gray-600">{plan.target}</p>
-                  <Badge variant="outline" className="text-[#268656] border-[#268656]/30">
+                  <Badge variant="outline" className="text-[#259A72] border-[#259A72]/30">
                     <MessageSquare className="w-3 h-3 mr-1" />
                     {plan.messages}
                   </Badge>
@@ -109,8 +109,8 @@ export function PricingSection() {
                 onClick={()=>  window.open("https://wa.me/+5493816814079", "_blank")}
                   className={`w-full group-hover:scale-105 transition-all duration-300 ${
                     plan.popular
-                      ? "bg-gradient-to-r from-[#268656] to-[#1f6b4a] hover:from-[#1f6b4a] hover:to-[#268656] text-white animate-pulse-glow"
-                      : "border-[#268656]/40 text-[#1f6b4a] hover:bg-[#268656]/5"
+                      ? "bg-gradient-to-r from-[#259A72] to-[#1F7A5D] hover:from-[#1F7A5D] hover:to-[#259A72] text-white animate-pulse-glow"
+                      : "border-[#259A72]/40 text-[#1F7A5D] hover:bg-[#259A72]/5"
                   }`}
                   variant={plan.popular ? "default" : "outline"}
                 >
@@ -128,7 +128,7 @@ export function PricingSection() {
         > 
           <p className="text-sm text-gray-600">{t("pricing.note")}</p>
 
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-[#268656]/20">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-[#259A72]/20">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">{t("pricing.services.title")}</h3>
             <div className="grid md:grid-cols-2 gap-4">
               {services.map((service, index) => (
@@ -137,7 +137,7 @@ export function PricingSection() {
                   className={`flex items-center space-x-3 ${plansInView ? "animate-slide-in-left" : "opacity-0"}`}
                   style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                 >
-                  <CheckCircle className="w-5 h-5 text-[#268656] flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[#259A72] flex-shrink-0" />
                   <span className="text-gray-700 text-left">{service}</span>
                 </div>
               ))}

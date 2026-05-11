@@ -12,7 +12,7 @@ export function CTASection({ scrollY }: CTASectionProps) {
   const { t } = useLanguage()
 
   return (
-    <section className="py-20 bg-gradient-to-r from-[#268656] to-[#1f6b4a] text-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-r from-[#259A72] to-[#1F7A5D] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent animate-gradient-shift"></div>
       <div
         className="absolute inset-0 opacity-30"
@@ -36,7 +36,7 @@ export function CTASection({ scrollY }: CTASectionProps) {
             <Button
              onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")}
               size="lg"
-              className="bg-white text-[#268656] hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse-glow"
+              className="bg-white text-[#259A72] hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse-glow"
             >
               <Calendar className="w-5 h-5 mr-2" />
               {t("cta.demo")}
@@ -45,7 +45,7 @@ export function CTASection({ scrollY }: CTASectionProps) {
              onClick={() => window.open("https://calendar.app.google/MSXoZnDqLGdtNmKx5", "_blank")}
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-[#268656] bg-transparent hover:scale-110 transition-all duration-300"
+              className="border-white text-white hover:bg-white hover:text-[#259A72] bg-transparent hover:scale-110 transition-all duration-300"
             >
               {t("cta.audit")}
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -17,9 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head >
-        <link rel=".ico" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
@@ -28,7 +28,7 @@ html {
 }
         `}</style>
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <N8nChatWeb />
         <Analytics />

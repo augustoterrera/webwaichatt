@@ -7,7 +7,6 @@ import { Footer } from "@/components/Footer"
 import { HeroSection } from "@/components/HeroSection"
 import { ProblemSolutionSection } from "@/components/ProblemSolutionSection"
 import { CRMSection } from "@/components/CRMSection"
-import { PricingSection } from "@/components/PricingSection"
 import { IntegrationsSection } from "@/components/IntegrationsSection"
 import { FAQSection } from "@/components/FAQSection"
 import { CTASection } from "@/components/CTASection"
@@ -28,7 +27,6 @@ export default function WaichattLanding() {
         <HeroSection scrollY={scrollY} />
         <ProblemSolutionSection />
         <CRMSection scrollY={scrollY} />
-        <PricingSection />
         <IntegrationsSection scrollY={scrollY} />
         <FAQSection />
         <CTASection scrollY={scrollY} />
