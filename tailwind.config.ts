@@ -7,8 +7,16 @@ const config: Config = {
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/*.{js,ts,jsx,tsx,mdx}",
-		"./hooks/**/*.{js,ts,jsx,tsx,mdx}",
+		"./components/CRMSection.tsx",
+		"./components/CTASection.tsx",
+		"./components/FAQSection.tsx",
+		"./components/Footer.tsx",
+		"./components/Header.tsx",
+		"./components/HeroSection.tsx",
+		"./components/IntegrationsSection.tsx",
+		"./components/LanguageSelector.tsx",
+		"./components/ProblemSolutionSection.tsx",
+		"./components/n8n-chat-web.tsx",
 		"./components/ui/avatar.tsx",
 		"./components/ui/badge.tsx",
 		"./components/ui/button.tsx",
@@ -16,8 +24,6 @@ const config: Config = {
 		"./components/ui/checkbox.tsx",
 		"./components/ui/input.tsx",
 		"./components/ui/textarea.tsx",
-		"./components/ui/toast.tsx",
-		"./components/ui/toaster.tsx",
 		"*.{js,ts,jsx,tsx,mdx}"
 	],
 	theme: {
