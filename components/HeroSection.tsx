@@ -5,12 +5,9 @@ import { Badge } from "@/components/ui/badge"
 import { Sparkles, ArrowRight, Phone } from "lucide-react"
 import { useInView } from "@/hooks/useInView"
 import { useLanguage } from "@/contexts/LanguageContext"
+import Image from "next/image"
 
-interface HeroSectionProps {
-  scrollY: number
-}
-
-export function HeroSection({ scrollY }: HeroSectionProps) {
+export function HeroSection() {
   const [heroRef, heroInView] = useInView(0.3)
   const { t } = useLanguage()
 
@@ -23,12 +20,7 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
       <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#259A72_1px,transparent_1px),linear-gradient(90deg,#259A72_1px,transparent_1px)] [background-size:82px_82px] [mask-image:linear-gradient(to_bottom,black,transparent_74%)]"></div>
 
       {/* Parallax background elements */}
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
-      >
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-[#259A72]/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1F7A5D]/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
@@ -41,9 +33,13 @@ export function HeroSection({ scrollY }: HeroSectionProps) {
             <div className="relative transform hover:scale-105 transition-transform duration-700 animate-float">
               <div className="absolute -inset-8 translate-y-10 rounded-[3rem] bg-slate-950/25 blur-3xl"></div>
               <div className="absolute inset-x-8 bottom-4 h-20 rounded-full bg-[#259A72]/20 blur-2xl"></div>
-              <img
+              <Image
                 src="/images/chat_whatsapp.png"
                 alt="Chat de WhatsApp automatizado por Waichatt"
+                width={384}
+                height={768}
+                priority
+                sizes="(min-width: 768px) 384px, 90vw"
                 className="relative w-full h-auto max-w-sm mx-auto drop-shadow-[0_36px_70px_rgba(15,23,42,0.38)] select-none"
               />
             </div>

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { LanguageProvider } from "@/contexts/LanguageContext"
-import { useState, useEffect } from "react"
 import { CTASection } from "@/components/CTASection"
 
 
@@ -26,20 +25,10 @@ interface blogPage {
 }
 
 export default function BlogPage({ blogs }: blogPage) {
-
-    const [scrollY, setScrollY] = useState(0)
-
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY)
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
-
     return (
         <div>
             <LanguageProvider>
-                <Header scrollY={scrollY} />
+                <Header />
                 <div className="min-h-screen bg-background">
                     <section className="relative bg-gradient-to-br from-[#1F7A5D] via-[#259A72] to-[#35B88A] py-24 px-6 overflow-hidden">
                         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
@@ -70,6 +59,8 @@ export default function BlogPage({ blogs }: blogPage) {
                                                     <img
                                                         src={blog.main_image || "/placeholder.svg"}
                                                         alt={blog.title}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                                                     />
                                                 ) : (
@@ -97,7 +88,7 @@ export default function BlogPage({ blogs }: blogPage) {
                         )}
                     </section>
 
-                    <CTASection scrollY={scrollY} />
+                    <CTASection />
                 </div>
                 <Footer />
             </LanguageProvider>

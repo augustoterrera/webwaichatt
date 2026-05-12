@@ -4,22 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Calendar, ArrowRight } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
 
-interface CTASectionProps {
-  scrollY: number
-}
-
-export function CTASection({ scrollY }: CTASectionProps) {
+export function CTASection() {
   const { t } = useLanguage()
 
   return (
     <section className="py-20 bg-gradient-to-r from-[#259A72] to-[#1F7A5D] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent animate-gradient-shift"></div>
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          transform: `translateY(${scrollY * 0.1}px)`,
-        }}
-      >
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white/20 rounded-full blur-2xl animate-float"></div>
         <div className="absolute bottom-10 right-10 w-48 h-48 bg-white/20 rounded-full blur-3xl animate-float-delayed"></div>
       </div>

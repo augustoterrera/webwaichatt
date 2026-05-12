@@ -7,11 +7,7 @@ import { LanguageSelector } from "@/components/LanguageSelector"
 import { useLanguage } from "@/contexts/LanguageContext"
 import Image from "next/image"
 
-interface HeaderProps {
-  scrollY: number
-}
-
-export function Header({ scrollY: _scrollY }: HeaderProps) {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLanguage()
 
@@ -27,7 +23,9 @@ export function Header({ scrollY: _scrollY }: HeaderProps) {
               height={45}
               width={150}
               alt="Waichatt"
-              className="h-[45px] w-auto drop-shadow-lg"
+              className="drop-shadow-lg"
+              style={{ height: "45px", width: "auto" }}
+              loading="eager"
               priority
             />
           </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Calendar, ArrowRight, Linkedin, Share2 } from "lucide-react"
@@ -93,19 +93,9 @@ export default function BlogPostPage({
         notFound()
     }
 
-
-
-    const [scrollY, setScrollY] = useState(0)
-
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY)
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
     return (
         <LanguageProvider>
-            <Header scrollY={scrollY} />
+            <Header />
             <div className="min-h-screen bg-background">
                 {/* Hero Section with Gradient */}
                 <section className="relative bg-gradient-to-br from-[#1F7A5D] via-[#259A72] to-[#35B88A] pt-8 pb-0">
@@ -135,6 +125,8 @@ export default function BlogPostPage({
                                     <img
                                         src={blog.main_image || "/placeholder.svg"}
                                         alt={blog.title}
+                                        loading="eager"
+                                        decoding="async"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -179,6 +171,8 @@ export default function BlogPostPage({
                                                     <img
                                                         src={image.url || "/placeholder.svg"}
                                                         alt={`${section.title || "Imagen"} ${imgIndex + 1}`}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="w-full"
                                                     />
                                                 </div>
@@ -277,6 +271,8 @@ export default function BlogPostPage({
                                                     <img
                                                         src={recBlog.main_image || "/placeholder.svg"}
                                                         alt={recBlog.title}
+                                                        loading="lazy"
+                                                        decoding="async"
                                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                                     />
                                                 </div>

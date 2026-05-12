@@ -13,7 +13,14 @@ export function Footer() {
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="space-y-4 animate-fade-in-up">
-            <Image src="/logo_completo.svg" width={166} height={50} alt="Waichatt" className="h-12 w-auto" />
+            <Image
+              src="/logo_completo.svg"
+              width={166}
+              height={50}
+              alt="Waichatt"
+              className="h-12"
+              style={{ width: "auto" }}
+            />
             <p className="text-gray-400">{t("footer.tagline")}</p>
           </div>
 

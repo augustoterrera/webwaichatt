@@ -4,11 +4,7 @@ import { useInView } from "@/hooks/useInView"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { integrations } from "@/data/constants"
 
-interface IntegrationsSectionProps {
-  scrollY: number
-}
-
-export function IntegrationsSection({ scrollY }: IntegrationsSectionProps) {
+export function IntegrationsSection() {
   const [integrationsRef, integrationsInView] = useInView(0.2)
   const { t } = useLanguage()
 
@@ -17,12 +13,7 @@ export function IntegrationsSection({ scrollY }: IntegrationsSectionProps) {
 
   return (
     <section id="integraciones" className="py-20 relative overflow-hidden select-none">
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          transform: `translateY(${scrollY * 0.2}px)`,
-        }}
-      >
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#259A72]/10 to-[#1F7A5D]/10"></div>
       </div>
 
@@ -42,6 +33,8 @@ export function IntegrationsSection({ scrollY }: IntegrationsSectionProps) {
                   <img 
                     src={item} 
                     alt="Integration logo"
+                    loading="lazy"
+                    decoding="async"
                     className="max-w-full max-h-full object-contain filter brightness-110 hover:brightness-125 transition-all duration-200"
                   />
                 </div>

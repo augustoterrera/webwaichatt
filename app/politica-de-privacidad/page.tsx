@@ -3,22 +3,13 @@ import Link from "next/link"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
 import { LanguageProvider } from "@/contexts/LanguageContext"
-import { useState, useEffect } from "react"
 
 export default function PrivacyPolicy() {
-    const [scrollY, setScrollY] = useState(0)
-
-    useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY)
-        window.addEventListener("scroll", handleScroll)
-        return () => window.removeEventListener("scroll", handleScroll)
-    }, [])
-
     return (
         <LanguageProvider>
 
             <main className="min-h-screen bg-white">
-                <Header scrollY={scrollY} />
+                <Header />
                 <div className="container mx-auto px-4 py-24">
                     <h1 className="text-3xl md:text-4xl font-bold mb-8 gradient-text">Política de Privacidad</h1>
 
