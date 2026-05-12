@@ -6,8 +6,18 @@ const config: Config = {
 	darkMode: ["class"],
 	content: [
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./components/*.{js,ts,jsx,tsx,mdx}",
+		"./hooks/**/*.{js,ts,jsx,tsx,mdx}",
+		"./components/ui/avatar.tsx",
+		"./components/ui/badge.tsx",
+		"./components/ui/button.tsx",
+		"./components/ui/card.tsx",
+		"./components/ui/checkbox.tsx",
+		"./components/ui/input.tsx",
+		"./components/ui/textarea.tsx",
+		"./components/ui/toast.tsx",
+		"./components/ui/toaster.tsx",
 		"*.{js,ts,jsx,tsx,mdx}"
 	],
 	theme: {
