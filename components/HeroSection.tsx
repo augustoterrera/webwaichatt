@@ -3,12 +3,10 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sparkles, ArrowRight, Phone } from "lucide-react"
-import { useInView } from "@/hooks/useInView"
 import { useLanguage } from "@/contexts/LanguageContext"
 import Image from "next/image"
 
 export function HeroSection() {
-  const [heroRef, heroInView] = useInView(0.3)
   const { t } = useLanguage()
 
   return (
@@ -25,11 +23,11 @@ export function HeroSection() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#1F7A5D]/10 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative" ref={heroRef}>
+      <div className="container mx-auto px-4 relative">
         {/* Main content with phone and features */}
         <div className="relative min-h-[80vh] flex items-center justify-center">
           {/* Phone in center */}
-          <div className={`relative select-none z-10 ${heroInView ? "animate-scale-in" : "opacity-0"}`}>
+          <div className="relative select-none z-10">
             <div className="relative transform hover:scale-105 transition-transform duration-700 animate-float">
               <div className="absolute -inset-8 translate-y-10 rounded-[3rem] bg-slate-950/25 blur-3xl"></div>
               <div className="absolute inset-x-8 bottom-4 h-20 rounded-full bg-[#259A72]/20 blur-2xl"></div>
@@ -48,7 +46,7 @@ export function HeroSection() {
           {/* Feature texts positioned around the phone */}
 
           {/* Top Left Feature */}
-          <div className={`absolute top-1/4 left-8 max-w-xs ${heroInView ? "animate-slide-in-left" : "opacity-0"}`}>
+          <div className="absolute top-1/4 left-8 max-w-xs">
             <div className="relative">
               <div className="absolute -left-4 top-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent to-[#259A72]/50"></div>
               <div className="absolute -left-6 top-1/2 w-3 h-3 bg-[#259A72]/70 rounded-full transform -translate-y-1/2 animate-pulse"></div>
@@ -63,7 +61,7 @@ export function HeroSection() {
 
           {/* Top Right Feature */}
           <div
-            className={`absolute top-1/4 right-8 max-w-xs text-right ${heroInView ? "animate-slide-in-right" : "opacity-0"}`}
+            className="absolute top-1/4 right-8 max-w-xs text-right"
           >
             <div className="relative">
               <div className="absolute -right-4 top-1/2 w-16 h-0.5 bg-gradient-to-l from-transparent to-[#259A72]/50"></div>
@@ -79,8 +77,7 @@ export function HeroSection() {
 
           {/* Bottom Left Feature */}
           <div
-            className={`absolute bottom-1/4 left-8 max-w-xs ${heroInView ? "animate-slide-in-left" : "opacity-0"}`}
-            style={{ animationDelay: "0.2s" }}
+            className="absolute bottom-1/4 left-8 max-w-xs"
           >
             <div className="relative">
               <div className="absolute -left-4 top-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent to-[#259A72]/50"></div>
@@ -97,8 +94,7 @@ export function HeroSection() {
 
           {/* Bottom Right Feature */}
           <div
-            className={`absolute bottom-1/4 right-8 max-w-xs text-right ${heroInView ? "animate-slide-in-right" : "opacity-0"}`}
-            style={{ animationDelay: "0.2s" }}
+            className="absolute bottom-1/4 right-8 max-w-xs text-right"
           >
             <div className="relative">
               <div className="absolute -right-4 top-1/2 w-16 h-0.5 bg-gradient-to-l from-transparent to-[#259A72]/50"></div>
@@ -117,8 +113,7 @@ export function HeroSection() {
         <div className="mt-16">
           <div className="max-w-4xl mx-auto text-center">
             <div
-              className={`space-y-8 ${heroInView ? "animate-fade-in-up" : "opacity-0"}`}
-              style={{ animationDelay: "0.4s" }}
+              className="space-y-8"
             >
               <div className="space-y-4">
                 <Badge className="bg-[#259A72]/10 text-[#259A72] hover:bg-[#259A72]/20 animate-bounce-subtle backdrop-blur-sm">

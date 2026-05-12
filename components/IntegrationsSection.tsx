@@ -3,6 +3,7 @@
 import { useInView } from "@/hooks/useInView"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { integrations } from "@/data/constants"
+import Image from "next/image"
 
 export function IntegrationsSection() {
   const [integrationsRef, integrationsInView] = useInView(0.2)
@@ -30,11 +31,12 @@ export function IntegrationsSection() {
                 className="shrink-0 rounded-lg p-4 hover:scale-105 transition-transform duration-200 bg-white/50 backdrop-blur-sm shadow-sm"
               >
                 <div className="w-12 h-12 flex items-center justify-center">
-                  <img 
+                  <Image
                     src={item} 
                     alt="Integration logo"
+                    width={48}
+                    height={48}
                     loading="lazy"
-                    decoding="async"
                     className="max-w-full max-h-full object-contain filter brightness-110 hover:brightness-125 transition-all duration-200"
                   />
                 </div>

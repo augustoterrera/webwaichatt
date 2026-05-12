@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge"
 import { BarChart3, CheckCircle } from "lucide-react"
 import { useInView } from "@/hooks/useInView"
 import { useLanguage } from "@/contexts/LanguageContext"
+import Image from "next/image"
 
 export function CRMSection() {
   const [crmRef, crmInView] = useInView(0.2)
@@ -44,24 +45,26 @@ export function CRMSection() {
 
           <div className={`relative w-full max-w-[820px] lg:ml-auto ${crmInView ? "animate-slide-in-right" : "opacity-0"}`}>
             <div className="bg-white rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-700 animate-float relative">
-              <img
+              <Image
                 src="/images/CRMimagen.png"
                 alt="Dashboard CRM de Waichatt"
+                width={1754}
+                height={890}
                 loading="lazy"
-                decoding="async"
+                sizes="(min-width: 1024px) 56vw, 100vw"
                 className="w-full h-auto rounded-lg "
               />
 
               {/* Logos de integración flotantes */}
               <div className="absolute -top-6 -left-14 hidden md:flex flex-col space-y-3">
                 <div className="bg-white rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-300 animate-bounce-subtle">
-                  <img src="/images/logoWhatsapp.png" alt="WhatsApp Integration" loading="lazy" decoding="async" className="w-12 h-12" />
+                  <Image src="/images/logoWhatsapp.png" alt="WhatsApp Integration" width={48} height={48} loading="lazy" className="w-12 h-12" />
                 </div>
                 <div
                   className="bg-white rounded-full p-3 shadow-lg hover:scale-110 transition-transform duration-300 animate-bounce-subtle flex items-center justify-center"
                   style={{ animationDelay: "0.5s" }}
                 >
-                  <img src="/images/logoMeta.png" alt="Meta Integration" loading="lazy" decoding="async" className="w-11 h-11 object-contain" />
+                  <Image src="/images/logoMeta.png" alt="Meta Integration" width={44} height={44} loading="lazy" className="w-11 h-11 object-contain" />
                 </div>
               </div>
 
@@ -69,8 +72,8 @@ export function CRMSection() {
               <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#259A72] to-[#1F7A5D] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-pulse flex items-center space-x-2">
                 <span>{t("crm.integrated")}</span>
                 <div className="flex space-x-1">
-                  <img src="/images/logoWhatsapp.png" alt="WhatsApp" loading="lazy" decoding="async" className="w-6 h-6" />
-                  <img src="/images/logoMeta.png" alt="Meta" loading="lazy" decoding="async" className="w-6 h-6 object-contain" />
+                  <Image src="/images/logoWhatsapp.png" alt="WhatsApp" width={24} height={24} loading="lazy" className="w-6 h-6" />
+                  <Image src="/images/logoMeta.png" alt="Meta" width={24} height={24} loading="lazy" className="w-6 h-6 object-contain" />
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { MessageCircle } from 'lucide-react';
 
 declare global {
     var __VUE_OPTIONS_API__: boolean | undefined;
@@ -10,11 +11,9 @@ declare global {
 
 export default function N8nChatWeb() {
     const isChatInitialized = useRef(false);
+    const launcherRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        let timeoutId: ReturnType<typeof setTimeout> | undefined;
-        let idleId: number | undefined;
-
         const loadChatStyles = () => {
             if (document.querySelector('link[data-n8n-chat-styles]')) {
                 return Promise.resolve();
@@ -50,6 +49,8 @@ export default function N8nChatWeb() {
 
             const { createChat } = await import('@n8n/chat');
 
+            launcherRef.current?.remove();
+
             createChat({
                 webhookUrl: 'https://rafawebhook.waichatt.com/webhook/faa8c9c6-5c38-45f1-b9ed-6156ec4b5049/chat',
                 webhookConfig: {
@@ -79,29 +80,31 @@ export default function N8nChatWeb() {
                     }
                 },
             });
+
+            requestAnimationFrame(() => {
+                document.querySelector<HTMLElement>('.chat-window-toggle')?.click();
+            });
         };
 
-        const scheduleChat = () => {
-            if (window.requestIdleCallback) {
-                idleId = window.requestIdleCallback(() => initializeChat(), { timeout: 3500 });
-                return;
-            }
-
-            timeoutId = setTimeout(initializeChat, 2500);
-        };
-
-        if (document.readyState === 'complete') {
-            scheduleChat();
-        } else {
-            window.addEventListener('load', scheduleChat, { once: true });
-        }
+        const launcher = launcherRef.current;
+        launcher?.addEventListener('click', initializeChat, { once: true });
 
         return () => {
-            window.removeEventListener('load', scheduleChat);
-            if (timeoutId) clearTimeout(timeoutId);
-            if (idleId && window.cancelIdleCallback) window.cancelIdleCallback(idleId);
+            launcher?.removeEventListener('click', initializeChat);
         };
     }, []);
 
-    return <div id="n8n-chat" className='select-none'></div>;
+    return (
+        <>
+            <button
+                ref={launcherRef}
+                type="button"
+                aria-label="Abrir chat"
+                className="fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-[#259A72] text-white shadow-xl transition-colors hover:bg-[#1F7A5D]"
+            >
+                <MessageCircle className="h-7 w-7" aria-hidden="true" />
+            </button>
+            <div id="n8n-chat" className="select-none"></div>
+        </>
+    );
 }
