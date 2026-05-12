@@ -29,7 +29,6 @@ export function HeroSection() {
           {/* Phone in center */}
           <div className="relative select-none z-10">
             <div className="relative transform hover:scale-105 transition-transform duration-700 animate-float">
-              <div className="absolute -inset-8 translate-y-10 rounded-[3rem] bg-slate-950/25 blur-3xl"></div>
               <div className="absolute inset-x-8 bottom-4 h-20 rounded-full bg-[#259A72]/20 blur-2xl"></div>
               <Image
                 src="/images/chat_whatsapp.png"
@@ -37,6 +36,7 @@ export function HeroSection() {
                 width={384}
                 height={768}
                 priority
+                fetchPriority="high"
                 sizes="(min-width: 768px) 384px, 90vw"
                 className="relative w-full h-auto max-w-sm mx-auto drop-shadow-[0_36px_70px_rgba(15,23,42,0.38)] select-none"
               />
